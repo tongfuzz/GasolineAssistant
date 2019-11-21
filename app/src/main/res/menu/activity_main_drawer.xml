@@ -5,11 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_average"
             android:icon="@drawable/ic_local_gas_station_blue_400_24dp"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_record"
             android:icon="@drawable/ic_history_blue_400_24dp"
             android:title="@string/menu_history" />
     </group>

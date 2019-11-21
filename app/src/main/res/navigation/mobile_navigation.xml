@@ -3,31 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_average">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_average"
         android:name="com.kk.tongfu.gasolineassistant.ui.gasaverage.GasAverageFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_gas_average" />
+        tools:layout="@layout/fragment_gas_average">
+        <action
+            android:id="@+id/action_nav_average_to_nav_add"
+            app:destination="@id/nav_add" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_record"
         android:name="com.kk.tongfu.gasolineassistant.ui.gasrecord.GasRecordFragment"
         android:label="@string/menu_history"
-        tools:layout="@layout/fragment_gas_record" />
+        tools:layout="@layout/fragment_gas_record">
+        <action
+            android:id="@+id/action_nav_record_to_nav_add"
+            app:destination="@id/nav_add" />
+    </fragment>
 
-   <!-- <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.kk.tongfu.gasolineassistant.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.kk.tongfu.gasolineassistant.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />-->
 
     <fragment
         android:id="@+id/nav_share"
@@ -40,4 +37,23 @@
         android:name="com.kk.tongfu.gasolineassistant.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_add"
+        android:name="com.kk.tongfu.gasolineassistant.ui.gasaverage.AddGasRecordFragment"
+        android:label="@string/add_gas_record"
+        tools:layout="@layout/fragment_add_gas_record">
+        <action
+            android:id="@+id/action_nav_add_to_nav_record"
+            app:destination="@id/nav_record"
+            app:popUpTo="@id/nav_average"/>
+
+        <argument
+            android:name="gas_record"
+            app:argType="com.kk.tongfu.gasolineassistant.service.GasRecord"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+
 </navigation>

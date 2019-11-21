@@ -14,4 +14,28 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="gas_count">油耗小助手</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_gas_record">添加油耗记录</string>
+    <string name="please_choose_date">请选择日期</string>
+    <string name="commit">提交</string>
+    <string name="please_input_correct_price">请输入正确油品价格</string>
+    <string name="please_input_correct_cost">请输入正确的此次加油金额</string>
+    <string name="please_input_correct_distance">请输入正确的当前总公里数</string>
+    <string name="please_input_correct_rest_amount">请输入正确的油箱剩余公里数</string>
+
+    <string name="please_input_price">请输入价格</string>
+    <string name="please_input_cost">请输入此次加油金额</string>
+    <string name="please_input_distance">请输入总公里数</string>
+    <string name="please_input_rest_amount">请输入油箱剩余公里数</string>
+    <string name="total_distance">总里程：%d</string>
+    <string name="average_price">平均价格：%s</string>
+    <string name="average_cost">平均花费：%s</string>
+    <string name="average_gas">平均油耗：%s/100KM</string>
+    <string name="average_gas_mouth">本月平均油耗：%s/100KM</string>
+    <string name="price_prekm">每公里价格：%s/KM</string>
+    <string name="price_prekm_mouth">本月每公里价格：%s/KM</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
 </resources>

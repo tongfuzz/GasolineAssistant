@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="java.text.SimpleDateFormat"></import>
+
+        <variable
+            name="item"
+            type="com.kk.tongfu.gasolineassistant.service.GasRecord" />
+
+        <variable
+            name="listener"
+            type="com.kk.tongfu.gasolineassistant.listener.ItemClickListener" />
+
+        <variable
+            name="items"
+            type="java.util.List" />
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="2019/12/11"
+                android:textColor="@color/color_71135c"
+                android:textSize="18sp"
+                app:date="@{item.date}"
+                android:drawableLeft="@drawable/ic_date_range_red_100_18dp"
+                android:drawablePadding="8dp" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_date"
+                android:layout_marginTop="5dp"
+                app:price="@{item.price}" />
+
+            <TextView
+                android:id="@+id/tv_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                android:layout_marginTop="5dp"
+                app:cost="@{item.cost}" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_cost"
+                android:layout_marginTop="5dp"
+                app:amount="@{item.restAmount}" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_amount"
+                android:layout_marginTop="5dp"
+                app:distance="@{item.currentDistance}" />
+
+            <TextView
+                android:id="@+id/tv_gascost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_distance"
+                android:layout_marginTop="5dp"
+                app:gascost="@{items}" />
+
+            <TextView
+                android:id="@+id/tv_price_prekm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_gascost"
+                android:layout_marginTop="5dp"
+                app:price_prekm="@{items}" />
+
+
+
+            <ImageView
+                android:id="@+id/iv_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{(v)->listener.onClick(v,item)}"
+                android:background="@drawable/ic_more_vert_indigo_200_18dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+
